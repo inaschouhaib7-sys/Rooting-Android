@@ -28,3 +28,44 @@ Vérifier : écran d'accueil Android, aucun compte personnel
 Commande de vérification : adb devices
 
 <img width="1170" height="146" alt="image" src="https://github.com/user-attachments/assets/a766ac42-9aeb-4086-880a-6fe0b1cf0e31" />
+
+Installer et lancer l'app de test
+
+<img width="1167" height="385" alt="image" src="https://github.com/user-attachments/assets/3899b58a-9030-4919-849b-8f2049ca5ac6" />
+
+ Définir 3 scénarios simples
+Ouvrir l'écran d'accueil
+Rechercher un item
+
+<img width="506" height="1016" alt="image" src="https://github.com/user-attachments/assets/e347c801-1034-46ae-ae1b-bbc89f0e1c1e" />
+
+Ouvrir un détail (fiche produit/profil)
+<img width="502" height="1022" alt="image" src="https://github.com/user-attachments/assets/e7a2d116-626c-4b71-876c-511191ea9556" />
+
+Lire Android Security (6 lignes max)
+La sécurité Android repose sur plusieurs couches de protection.
+Chaque application fonctionne dans une sandbox, isolée des autres.
+Le modèle de permissions contrôle l’accès aux ressources sensibles (caméra, stockage, micro…).
+Le système protège aussi l’intégrité globale, empêchant les modifications non autorisées.
+Ces mécanismes limitent les risques liés aux applications malveillantes.
+Le rooting peut contourner ces protections et compromettre la sécurité du système.
+
+Verified Boot (idée générale + check AVD)
+Verified Boot est un mécanisme de sécurité qui vérifie l’intégrité du système au démarrage.
+Son objectif principal est de garantir que le système lancé est bien celui prévu par le fabricant, sans modification malveillante.
+Il repose sur une chain of trust : chaque composant vérifie cryptographiquement l’authenticité du suivant avant de lui transmettre le contrôle.
+Ainsi, la confiance se construit étape par étape dès le bootloader jusqu’au système Android.
+L’intégrité au démarrage est critique, car si le boot est compromis, toutes les protections ultérieures peuvent être contournées.
+Un système altéré dès le démarrage rend inefficaces le sandboxing, les permissions et les autres mécanismes de sécurité.
+<img width="1319" height="117" alt="image" src="https://github.com/user-attachments/assets/44580937-effa-4717-a87f-57c2ed6deafc" />
+
+
+Android Verified Boot (AVB) est l’évolution moderne de Verified Boot, offrant une vérification d’intégrité plus robuste et flexible des partitions système.
+Il utilise des mécanismes cryptographiques avancés pour garantir que chaque composant chargé au démarrage est authentique et non modifié.
+AVB intègre aussi une protection contre le rollback, empêchant l’installation d’anciennes versions vulnérables du système.
+
+Protection anti-rollback :
+Elle bloque le retour vers une version plus ancienne d’Android pouvant contenir des failles connues, afin d’éviter qu’un attaquant n’exploite une vulnérabilité corrigée dans les versions récentes.
+
+<img width="985" height="722" alt="image" src="https://github.com/user-attachments/assets/98a8e4c4-cd35-4838-aacf-783ae7aa2611" />
+
